@@ -65,6 +65,15 @@ Certifique-se de ter os seguintes pré-requisitos instalados:
      http://localhost:8080/Zitrus
      ```
 
+## Configuração do Banco de Dados
+
+Para garantir que o projeto se conecte corretamente ao banco de dados MySQL, você deve configurar as seguintes propriedades de conexão no seu código:
+
+- **Driver JDBC**: `com.mysql.cj.jdbc.Driver`
+- **URL do Banco de Dados**: `jdbc:mysql://localhost:3306/zitrusdb`
+- **Usuário**: `sa`
+- **Senha**: `admin`
+
 ## SCRIPTS VIA LIQUIBASE 
 
 
@@ -75,6 +84,7 @@ Este repositório utiliza Liquibase para gerenciar o versionamento de dados no b
 ## Arquivo Liquibase
 
 O arquivo Liquibase XML está localizado em `src/main/resources/db/db.changelog-master.xml` e contém o seguinte conteúdo:
+
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -124,5 +134,4 @@ O arquivo Liquibase XML está localizado em `src/main/resources/db/db.changelog-
     </changeSet>
 
 </databaseChangeLog>
-
 
