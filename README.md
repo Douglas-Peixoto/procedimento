@@ -65,5 +65,64 @@ Certifique-se de ter os seguintes pré-requisitos instalados:
      http://localhost:8080/Zitrus
      ```
 
-## Estrutura do Projeto
+## SCRIPTS VIA LIQUIBASE 
+
+
+# Documentação do Liquibase
+
+Este repositório utiliza Liquibase para gerenciar o versionamento de dados no banco de dados. O arquivo Liquibase incluído neste projeto é responsável por adicionar registros iniciais à tabela `paciente`.
+
+## Arquivo Liquibase
+
+O arquivo Liquibase XML está localizado em `src/main/resources/db/db.changelog-master.xml` e contém o seguinte conteúdo:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="Douglas Medeiros Peixoto">
+        <insert tableName="paciente">
+            <column name="nome" value="Douglas"/>
+            <column name="idade" value="10"/>
+            <column name="sexo" value="M"/>
+            <column name="procedimento" value="1234"/>
+        </insert>
+        <insert tableName="paciente">
+            <column name="nome" value="Gabriel"/>
+            <column name="idade" value="20"/>
+            <column name="sexo" value="M"/>
+            <column name="procedimento" value="4567"/>
+        </insert>
+        <insert tableName="paciente">
+            <column name="nome" value="Maria"/>
+            <column name="idade" value="10"/>
+            <column name="sexo" value="F"/>
+            <column name="procedimento" value="6789"/>
+        </insert>
+        <insert tableName="paciente">
+            <column name="nome" value="Lucas"/>
+            <column name="idade" value="10"/>
+            <column name="sexo" value="M"/>
+            <column name="procedimento" value="6789"/>
+        </insert>
+        <insert tableName="paciente">
+            <column name="nome" value="Carlos"/>
+            <column name="idade" value="20"/>
+            <column name="sexo" value="M"/>
+            <column name="procedimento" value="1234"/>
+        </insert>
+        <insert tableName="paciente">
+            <column name="nome" value="Nathalia"/>
+            <column name="idade" value="30"/>
+            <column name="sexo" value="F"/>
+            <column name="procedimento" value="4567"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
+
 
